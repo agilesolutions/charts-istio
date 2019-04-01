@@ -15,5 +15,5 @@ spec:
         exact: /swagger-ui.html
     route:
     - destination:
-        host: adminguipage
+        host: {{ .Chart.Name }}
         port:
