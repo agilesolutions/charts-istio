@@ -1,0 +1,9 @@
+- name: details
+  version: "0.1.0"
+  repository: "https://agilesolutions.github.io/charts-istio/"
+- name: ratings
+  version: "0.1.0"
+  repository: "https://agilesolutions.github.io/charts-istio/"
+- name: review
+  version: "0.1.0"
+  repository: "https://agilesolutions.github.io/charts-istio/"  
