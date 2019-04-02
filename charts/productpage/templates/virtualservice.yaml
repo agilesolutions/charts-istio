@@ -10,6 +10,8 @@ spec:
   http:
   - match:
     - uri:
+        exact: /productpage
+    - uri:
         exact: /api
     - uri:
         exact: /swagger-ui.html

@@ -1,15 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}
-  labels:
-    app: {{ .Chart.Name }}
+  name: "{{ .Chart.Name }}-v1"
 spec:
   replicas: {{ .Values.replicaCount }}
   template:
     metadata:
       labels:
         app: {{ .Chart.Name }}
+        version: v1
     spec:
       containers:
       - name: {{ .Chart.Name }}

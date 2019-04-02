@@ -2,8 +2,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: "{{ .Chart.Name }}-v1"
-  labels:
-    app: {{ .Chart.Name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   template:
@@ -18,12 +16,10 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.service.internalPort }}
-apiVersion: extensions/v1beta1
+        apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: "{{ .Chart.Name }}-v2"
-  labels:
-    app: {{ .Chart.Name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   template:
@@ -38,12 +34,10 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.service.internalPort }}
-apiVersion: extensions/v1beta1
+        apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: "{{ .Chart.Name }}-v3"
-  labels:
-    app: {{ .Chart.Name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   template:

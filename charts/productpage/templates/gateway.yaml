@@ -2,6 +2,8 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: {{ .Values.gateway.name }}
+  annotations:
+    kubernetes.io/ingress.class: "istio"
 spec:
   selector:
     istio: ingressgateway # use istio default controller
