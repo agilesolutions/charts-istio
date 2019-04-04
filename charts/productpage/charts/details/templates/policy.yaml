@@ -1,11 +1,13 @@
-apiVersion: config.istio.io/v1alpha2
-kind: EndUserAuthenticationPolicySpec
-metadata: 
-  name: "{{ .Chart.Name }}-auth-policy"
-  namespace: default
-spec: 
-  jwts: 
-    - issuer: http://keycloak/auth/realms/istio
-      jwks_uri: http://keycloak/auth/realms/istio/protocol/openid-connect/certs
-      audiences: 
-      - productpage
+apiVersion: “authentication.istio.io/v1alpha1”      
+metadata:
+  name: “{{ .Chart.Name }}-jwt-policy”
+spec:
+  targets:
+  - name: {{ .Chart.Name }}
+  peers:
+  - mtls:
+  origins:
+  - jwt:
+      issuer: http://keycloak/auth/realms/istio
+      jwksUri: http://keycloak/auth/realms/istio/protocol/openid-connect/certs
+  principalBinding: USE_ORIGIN      
