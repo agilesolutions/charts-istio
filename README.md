@@ -21,3 +21,10 @@ The deployment included three versions of the reviews microservice to showcase d
 The services communicate over HTTP using DNS for service discovery. An overview of the architecture is shown below.
 
 ![Bookinfo](bookinfo.JPG)
+
+
+## end user identity with keycloak
+The two main objects for configuring Istio's security policies are the Policy and DestinationRule object. Policy objects are used to configure the security settings of a service (or group of services). A DestinationRule in Istio is always used to configure how clients talk to a service
+
+- [Increasing Security with a Service Mesh](https://www.infoq.com/articles/istio-security-mtls-jwt)
+- [some example setting up keycloak on istio](https://github.com/kameshsampath/istio-keycloak-demo)
