@@ -7,7 +7,7 @@ keywords:
   - keycloak
 home: https://github.com/agilesolutions/charts-istio
 sources:
-  - docker.io/jboss/keycloak:3.4.3.Final
+  - https://github.com/agilesolutions/charts-istio
 maintainers:
   - name: rob
     email: robert.rong@agile-solutions.ch
