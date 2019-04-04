@@ -1,6 +1,6 @@
 apiVersion: “authentication.istio.io/v1alpha1”      
 metadata:
-  name: “{{ .Chart.Name }}-jwt-policy”
+  name: "{{ .Chart.Name }}-jwt-policy"
 spec:
   targets:
   - name: {{ .Chart.Name }}
@@ -10,4 +10,4 @@ spec:
   - jwt:
       issuer: http://keycloak/auth/realms/istio
       jwksUri: http://keycloak/auth/realms/istio/protocol/openid-connect/certs
-  principalBinding: USE_ORIGIN      
+  principalBinding: USE_ORIGIN 
