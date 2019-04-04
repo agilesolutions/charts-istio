@@ -1,0 +1,20 @@
+replicaCount: 1
+image:
+  repository: docker.io/jboss/keycloak
+  tag: 3.4.3.Final
+  pullPolicy: IfNotPresent
+service:
+  name: keycloak
+  type: ClusterIP
+  externalPort: 80
+  internalPort: 8080
+livenessProbe:
+  initialDelaySeconds: 60
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 1
+readinessProbe:
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 1
+terminationGracePeriodSeconds: 10
