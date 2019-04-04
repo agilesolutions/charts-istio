@@ -1,4 +1,4 @@
-apiVersion: “authentication.istio.io/v1alpha1”      
+apiVersion: "authentication.istio.io/v1alpha1"     
 metadata:
   name: "{{ .Chart.Name }}-jwt-policy"
 spec:
