@@ -1,0 +1,48 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ .Values.virtualservice.name }}
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - {{ .Values.gateway.name }}
+  http:
+  - match:
+    - uri:
+        exact: /productpage
+    - uri:
+        exact: /app
+    - uri:
+        prefix: /static
+    - uri:
+        regex: '^.*\.(ico|png|jpg)$'
+    route:
+    - destination:
+        host: {{ .Chart.Name }}
+        port:
+          number: {{ .Values.gateway.internalPort }}
+  - match:
+    - uri:
+        exact: /details
+    route:
+    - destination:
+        host: details
+        port:
+          number: {{ .Values.gateway.internalPort }}
+  - match:
+    - uri:
+        exact: /ratings
+    route:
+    - destination:
+        host: ratings
+        port:
+          number: {{ .Values.gateway.internalPort }}
+  - match:
+    - uri:
+        exact: /reviews
+    route:
+    - destination:
+        host: reviews
+        port:
+          number: {{ .Values.gateway.internalPort }}    
