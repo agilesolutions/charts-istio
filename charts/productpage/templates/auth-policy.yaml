@@ -1,10 +1,11 @@
 apiVersion: "authentication.istio.io/v1alpha1"
 kind: "Policy"  
 metadata:
-  name: "{{ .Chart.Name }}-jwt-policy"
+  name: "{{ .Chart.Name }}-auth-policy"
 spec:
   targets:
-  - name: {{ .Chart.Name }}
+  - name: reviews
+  - name: details
   peers:
   - mtls:
   origins:
