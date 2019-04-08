@@ -1,0 +1,12 @@
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ServiceRoleBinding
+metadata:
+  name: binding-products-all-authenticated-users
+  namespace: default
+spec:
+  subjects:
+  - properties:
+      source.principal: "*"
+  roleRef:
+    kind: ServiceRole
+    name: "products-viewer"

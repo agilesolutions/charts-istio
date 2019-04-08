@@ -1,0 +1,18 @@
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ServiceRole
+metadata:
+  name: products-viewer
+  namespace: default
+spec:
+  rules:
+  - services: ["product*"]
+    methods: ["*"]
+  - services: ["reviews.default.svc.cluster.local"]
+    paths: ["*/reviews"]
+    methods: ["GET"]
+  - services: ["ratinges.default.svc.cluster.local"]
+    paths: ["*/ratings"]
+    methods: ["GET"]
+  - services: ["details.default.svc.cluster.local"]
+    paths: ["*/details"]
+    methods: ["GET"]
