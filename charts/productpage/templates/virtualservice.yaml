@@ -41,19 +41,25 @@ spec:
   - match:
     - uri:
         exact: /reviews
+    - headers:
+        end-user:
+          exact: admin
     route:
     - destination:
         host: reviews
         subset: v1
-      weight: 80
+  - match:
+    - uri:
+        exact: /reviews
+    route:
     - destination:
         host: reviews
         subset: v2
-      weight: 10
+      weight: 50
     - destination:
         host: reviews
         subset: v3
-      weight: 10
+      weight: 50
     timeout: 8s
     retries:
       attempts: 3
