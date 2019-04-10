@@ -12,4 +12,7 @@ spec:
   - jwt:
       issuer: http://keycloak/auth/realms/istio
       jwksUri: http://keycloak/auth/realms/istio/protocol/openid-connect/certs
+    trigger_rules:
+    - excluded_paths:
+      - exact: /health      
   principalBinding: USE_ORIGIN 

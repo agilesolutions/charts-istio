@@ -44,5 +44,13 @@ spec:
     route:
     - destination:
         host: reviews
-        port:
-          number: {{ .Values.gateway.internalPort }}    
+        subset: v1
+      weight: 80
+    - destination:
+        host: reviews
+        subset: v2
+      weight: 10
+    - destination:
+        host: reviews
+        subset: v3
+      weight: 10
