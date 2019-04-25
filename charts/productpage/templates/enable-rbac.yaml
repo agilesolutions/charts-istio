@@ -1,0 +1,11 @@
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ClusterRbacConfig
+metadata:
+  name: default
+spec:
+  mode: 'ON_WITH_INCLUSION'
+  inclusion:
+    services:
+    - "details.default.svc.cluster.local"
+    - "ratings.default.svc.cluster.local" 
+    - "reviews.default.svc.cluster.local"   

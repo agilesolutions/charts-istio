@@ -6,13 +6,14 @@ metadata:
 spec:
   rules:
   - services: ["product*"]
+    paths: ["*"]
     methods: ["*"]
   - services: ["reviews.default.svc.cluster.local"]
     paths: ["*/reviews"]
     methods: ["GET"]
   - services: ["ratinges.default.svc.cluster.local"]
     paths: ["*/ratings"]
-    methods: ["GET"]
+    methods: ["GET", "PUT"]
   - services: ["details.default.svc.cluster.local"]
     paths: ["*/details"]
     methods: ["GET"]

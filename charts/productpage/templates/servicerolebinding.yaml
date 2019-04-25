@@ -5,7 +5,9 @@ metadata:
   namespace: default
 spec:
   subjects:
+# only to authenticated users and services where the JWT email claim is my email address derived from keycloak LDAP AD user federation.  
   - properties:
+      request.auth.claims[email]: "robert.rong@agile-solutions.ch"
       source.principal: "*"
   roleRef:
     kind: ServiceRole
